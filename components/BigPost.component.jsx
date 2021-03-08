@@ -4,6 +4,7 @@ import Header from "./Header.components";
 import style from "../styles/Layout.module.scss";
 import style1 from "../styles/BigPost.module.scss";
 import PostDet from "./PostDet.component";
+import Tag from "./Tag.component";
 function BigPost(props) {
   return (
     <div className={style.card + " " + style1.big}>
@@ -18,6 +19,7 @@ function BigPost(props) {
         />
       </div>
       <div className={style1.text}>
+        <Tag type="Big" tags={props.tags} />
         <Header type="Big">{props.head}</Header>
         <Desc>{props.children.slice(0, 199)}</Desc>
         <PostDet author={props.author} id={props.id}></PostDet>

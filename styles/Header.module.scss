@@ -2,6 +2,7 @@
 .genHead {
   font-family: "Merriweather Sans", sans-serif;
   margin: 0;
+  display: inline;
   // -ms-word-break: break-all;
   // word-break: break-all;
 
@@ -18,12 +19,18 @@
 .Small {
   font-size: 1.2rem;
 }
+.Large {
+  font-size: 3rem;
+}
 @media only screen and (max-width: 600px) {
   .Big {
     font-size: 1.1rem;
   }
   .Small {
     font-size: 0.8rem;
+  }
+  .Large {
+    font-size: 1.5rem;
   }
 }
 
@@ -35,6 +42,9 @@
   .Small {
     font-size: 0.9rem;
   }
+  .Large {
+    font-size: 1.6rem;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -44,6 +54,9 @@
   }
   .Small {
     font-size: 1rem;
+  }
+  .Large {
+    font-size: 1.8rem;
   }
 }
 
@@ -55,6 +68,9 @@
   .Small {
     font-size: 1.2rem;
   }
+  .Large {
+    font-size: 2.3rem;
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -64,5 +80,8 @@
   }
   .Small {
     font-size: 2rem;
+  }
+  .Large {
+    font-size: 3.5rem;
   }
 }

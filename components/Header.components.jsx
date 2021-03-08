@@ -6,6 +6,8 @@ function Header(props) {
         className={
           props.type == "Big"
             ? style.Big + " " + style.genHead
+            : props.type == "Large"
+            ? style.Large + " " + style.genHead
             : style.Small + " " + style.genHead
         }
       >

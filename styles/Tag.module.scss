@@ -1,0 +1,64 @@
+$main_col: #ffe3fe;
+$accent_col: #93329e;
+.tagBucket {
+  display: flex;
+  align-items: center;
+  .tag {
+    &:before {
+      content: "#";
+    }
+    margin-right: 0.5rem;
+    color: $accent_col;
+    display: inline;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .Big {
+    font-size: 0.8rem;
+  }
+  .Large {
+    font-size: 1rem;
+  }
+  .Small {
+    font-size: 0.6rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 769px) {
+  .Big {
+    font-size: 1rem;
+  }
+  .Large {
+    font-size: 1.2rem;
+  }
+  .Small {
+    font-size: 0.6rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .Big {
+    font-size: 1.3rem;
+  }
+  .Large {
+    font-size: 1.6rem;
+  }
+  .Small {
+    font-size: 0.7rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 2400px) {
+  .Big {
+    font-size: 2rem;
+  }
+  .Large {
+    font-size: 2.2rem;
+  }
+  .Small {
+    font-size: 1.3rem;
+  }
+}

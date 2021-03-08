@@ -1,0 +1,47 @@
+.icon {
+  p {
+    display: inline;
+    font-family: "Merriweather Sans", sans-serif;
+    // color: rgb(160, 158, 156);
+    letter-spacing: 0.5px;
+  }
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 768px) {
+  .icon {
+    p {
+      font-size: 0.6rem;
+    }
+    svg {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 769px) {
+  .icon {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .icon {
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 2400px) {
+  .icon {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}

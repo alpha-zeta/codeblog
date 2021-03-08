@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:ital@1&display=swap");
+.desc {
+  p {
+    font-family: "Zilla Slab", serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgb(160, 158, 156);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .desc {
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 769px) {
+  .desc {
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .desc {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 2400px) {
+  .desc {
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}

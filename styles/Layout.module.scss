@@ -1,0 +1,142 @@
+$main_col: #ffe3fe;
+$accent_col: #93329e;
+.container {
+  padding: 0 1rem;
+  display: flex;
+}
+.containerPadded {
+  padding: 0 5rem;
+}
+.main {
+  display: block;
+  height: fit-content;
+}
+
+.card {
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  width: 80vw;
+  height: 500px;
+  cursor: pointer;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  border-color: #0070f3;
+}
+
+.card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.logo {
+  height: 1em;
+}
+.giant {
+  display: flex;
+  position: relative;
+  height: inherit;
+}
+.half {
+  width: 50%;
+  display: inline;
+  height: inherit;
+}
+.half:nth-child(2) {
+  padding: 1rem;
+  height: unset;
+  border-left: 1px solid rgb(229, 229, 229);
+  .card {
+    border-radius: 0;
+    border-bottom: 1px solid rgb(229, 229, 229);
+  }
+  .card:nth-child(4) {
+    border: none;
+  }
+}
+.rect {
+  width: 20px;
+  height: 20px;
+  background-color: $accent_col;
+  display: inline-flex;
+}
+.tag {
+  font-family: "Open Sans", sans-serif;
+  font-size: 2rem;
+  display: inline;
+}
+.outer {
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .containerPadded {
+    padding: 0 0.5rem;
+  }
+  .giant {
+    display: block;
+  }
+  .half {
+    width: 100%;
+    display: block;
+    // padding: 1rem;
+  }
+  .half:nth-child(1) {
+    border-bottom: 1px solid rgb(229, 229, 229);
+  }
+  .half:nth-child(2) {
+    border: none;
+    padding: 0 1rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .containerPadded {
+    padding: 0 1.5rem;
+  }
+  .giant {
+    display: block;
+  }
+  .half {
+    width: 100%;
+    display: block;
+    // padding: 1rem;
+  }
+  .half:nth-child(1) {
+    border-bottom: 1px solid $accent_col;
+  }
+  .half:nth-child(2) {
+    border: none;
+    padding: 0 1rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 769px) {
+  .containerPadded {
+    padding: 0 2rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .containerPadded {
+    padding: 0 2.5rem;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

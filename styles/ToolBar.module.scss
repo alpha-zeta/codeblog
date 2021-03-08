@@ -1,0 +1,15 @@
+.tools {
+  display: flex;
+  text-align: right;
+  width: 30%;
+  min-width: max-content;
+  justify-content: space-around;
+  vertical-align: middle;
+  align-items: center;
+  a {
+    //         margin-block-start: 0.3em;
+    //   margin-block-end: 0.3em;
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 1rem;
+  }
+}

@@ -24,7 +24,12 @@ export default function Home({ articles }) {
           <div className={styles.half}>
             {articles.map(function (object, i) {
               return i > 0 && i < 5 ? (
-                <SmallPost key={object.id} head={object.title}>
+                <SmallPost
+                  key={object.id}
+                  head={object.title}
+                  author={"Anish Majhi"}
+                  id={object.id}
+                >
                   {object.body}
                 </SmallPost>
               ) : null;

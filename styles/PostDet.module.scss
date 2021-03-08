@@ -4,8 +4,8 @@ $accent_col: #93329e;
   p {
     display: inline;
     font-family: "Merriweather Sans", sans-serif;
-    // color: rgb(160, 158, 156);
     letter-spacing: 0.5px;
+    margin-right: 0.5rem;
   }
   display: flex;
   align-items: center;
@@ -16,6 +16,21 @@ $accent_col: #93329e;
     border-radius: 50%;
     background-color: $accent_col;
     margin-right: 0.3rem;
+  }
+  .svg {
+    margin-right: 0.1rem;
+  }
+}
+.small {
+  .avatar {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $accent_col;
+    margin-right: 0.1rem;
+  }
+  .svg {
+    margin-right: 0.05rem;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -29,6 +44,18 @@ $accent_col: #93329e;
       height: 0.8rem;
       overflow: hidden;
       font-size: 0.8rem;
+    }
+  }
+  .small {
+    margin-top: 0.2rem;
+    p {
+      font-size: 0.6rem;
+    }
+    .svg {
+      width: 0.6rem;
+      height: 0.6rem;
+      overflow: hidden;
+      font-size: 0.6rem;
     }
   }
 }
@@ -46,6 +73,18 @@ $accent_col: #93329e;
       font-size: 0.8rem;
     }
   }
+  .small {
+    margin-top: 0.2rem;
+    p {
+      font-size: 0.6rem;
+    }
+    .svg {
+      width: 0.6rem;
+      height: 0.6rem;
+      overflow: hidden;
+      font-size: 0.6rem;
+    }
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -61,6 +100,18 @@ $accent_col: #93329e;
       font-size: 0.9rem;
     }
   }
+  .small {
+    margin-top: 0.3rem;
+    p {
+      font-size: 0.7rem;
+    }
+    .svg {
+      width: 0.7rem;
+      height: 0.7rem;
+      overflow: hidden;
+      font-size: 0.7rem;
+    }
+  }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -74,6 +125,18 @@ $accent_col: #93329e;
       height: 1.2rem;
       overflow: hidden;
       font-size: 1.2rem;
+    }
+  }
+  .small {
+    margin-top: 0.4rem;
+    p {
+      font-size: 0.9rem;
+    }
+    .svg {
+      width: 0.9rem;
+      height: 0.9rem;
+      overflow: hidden;
+      font-size: 0.9rem;
     }
   }
 }

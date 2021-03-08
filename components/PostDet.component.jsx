@@ -9,8 +9,10 @@ function PostDet(props) {
     >
       <div className={styles.avatar}></div>
       <p>{props.author}</p>
-      <ChatBubbleOutlineIcon className={styles.svg} />
-      <p>{props.id}</p>
+      <div className={styles.cmt}>
+        <ChatBubbleOutlineIcon className={styles.svg} />
+        <p>{props.id}</p>
+      </div>
     </div>
   );
 }

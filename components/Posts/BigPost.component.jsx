@@ -1,14 +1,16 @@
 import Image from "next/image";
-import Desc from "./Desc.components";
-import Header from "./Header.components";
-import style from "../styles/Layout.module.scss";
-import style1 from "../styles/BigPost.module.scss";
-import PostDet from "./PostDet.component";
-import Tag from "./Tag.component";
+import Desc from "../Misc/Desc.components";
+import Header from "../Misc/Header.components";
+import style from "../../styles/Layout.module.scss";
+import style1 from "../../styles/BigPost.module.scss";
+import PostDet from "../Misc/PostDet.component";
+import Tag from "../Tag_Topics/Tag.component";
+import Topic from "../Tag_Topics/Topic.component";
 function BigPost(props) {
   return (
     <div className={style.card + " " + style1.big}>
       <div className={style1.cover}>
+        <Topic type="Big">Javascript</Topic>
         <Image
           src="/images/img1.jpg"
           alt={props.alt}

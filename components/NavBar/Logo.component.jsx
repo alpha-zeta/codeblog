@@ -1,4 +1,4 @@
-import style from "../styles/Logo.module.scss";
+import style from "../../styles/Logo.module.scss";
 function Logo(props) {
   return (
     <div>

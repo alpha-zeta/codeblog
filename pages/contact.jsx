@@ -1,4 +1,4 @@
-import META from "../components/Meta.components";
+import META from "../components/Layout/Meta.components";
 function contact(props) {
   return (
     <div>

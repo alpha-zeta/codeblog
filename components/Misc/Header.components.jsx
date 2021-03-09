@@ -1,4 +1,4 @@
-import style from "../styles/Header.module.scss";
+import style from "../../styles/Header.module.scss";
 function Header(props) {
   return (
     <div>

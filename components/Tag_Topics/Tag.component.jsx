@@ -1,4 +1,4 @@
-import styles from "../styles/Tag.module.scss";
+import styles from "../../styles/Tag.module.scss";
 function Tag(props) {
   const list = props.tags.split(" ");
   return (

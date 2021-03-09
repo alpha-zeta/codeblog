@@ -1,5 +1,5 @@
 import Head from "next/head";
-import META from "../components/Meta.components";
+import META from "../components/Layout/Meta.components";
 
 const about = (props) => {
   return (

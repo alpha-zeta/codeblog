@@ -1,5 +1,5 @@
 import Link from "next/link";
-import style from "../styles/ToolBar.module.scss";
+import style from "../../styles/ToolBar.module.scss";
 function ToolBar(props) {
   return (
     <div className={style.tools}>

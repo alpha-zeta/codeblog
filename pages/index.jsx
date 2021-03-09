@@ -1,9 +1,9 @@
 import Head from "next/head";
 import styles from "../styles/Layout.module.scss";
 import { posts } from "../assets/posts";
-import BigPost from "../components/BigPost.component";
-import SmallPost from "../components/SmallPost.component";
-import Header from "../components/Header.components";
+import BigPost from "../components/Posts/BigPost.component";
+import SmallPost from "../components/Posts/SmallPost.component";
+import Header from "../components/Misc/Header.components";
 export default function Home({ articles }) {
   return (
     <div className={styles.containerPadded}>
@@ -33,7 +33,7 @@ export default function Home({ articles }) {
                   head={object.title}
                   author={"Anish Majhi"}
                   id={object.id}
-                  tags="javascript python c++ c solution"
+                  tags="javascript python c++ c solution fortran ruby rails java react node express etc"
                 >
                   {object.body}
                 </SmallPost>

@@ -1,4 +1,4 @@
-import style from "../styles/Desc.module.scss";
+import style from "../../styles/Desc.module.scss";
 function Desc(props) {
   return (
     <div className={style.desc}>

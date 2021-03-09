@@ -1,4 +1,4 @@
-import style from "../styles/ToolBar.module.scss";
+import style from "../../styles/ToolBar.module.scss";
 function Sign(props) {
   return (
     <div>

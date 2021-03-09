@@ -33,7 +33,7 @@ export default function Home({ articles }) {
                   head={object.title}
                   author={"Anish Majhi"}
                   id={object.id}
-                  tags="javascript python c++ c solution fortran ruby rails java react node express etc"
+                  tags="javascript python c++ c solution"
                 >
                   {object.body}
                 </SmallPost>

@@ -8,7 +8,9 @@ const Layout = ({ children, title, description, keywords }) => {
     <div>
       <META title={title} description={description} keywords={keywords}></META>
       <Navbar />
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        <div className={styles.containerPadded}>{children}</div>
+      </main>
     </div>
   );
 };

@@ -28,7 +28,7 @@ $accent_col: #93329e;
     align-items: center;
   }
 }
-.small {
+.Small {
   .avatar {
     width: 10px;
     height: 10px;
@@ -39,6 +39,12 @@ $accent_col: #93329e;
   .svg {
     margin-right: 0.05rem;
   }
+}
+.Large {
+  width: 100%;
+}
+.insta {
+  margin-right: 0.5rem;
 }
 @media only screen and (max-width: 768px) {
   .icon {

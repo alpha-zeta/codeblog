@@ -4,44 +4,17 @@ import { posts } from "../assets/posts";
 import BigPost from "../components/Posts/BigPost.component";
 import SmallPost from "../components/Posts/SmallPost.component";
 import Header from "../components/Misc/Header.components";
+import Articles from "../components/Misc/Articles.component";
 export default function Home({ articles }) {
   return (
-    <div className={styles.containerPadded}>
+    <div>
       <div className={styles.outer}>
         <div className={styles.rect}></div>
         <Header type="Large" className={styles.tag}>
           Latest
         </Header>
       </div>
-      <div className={styles.main}>
-        <div className={styles.giant}>
-          <div className={styles.half}>
-            <BigPost
-              head={articles[0].title}
-              author={"Anish Majhi"}
-              id={articles[0].id}
-              tags="javascript python c++ c solution"
-            >
-              {articles[0].body}
-            </BigPost>
-          </div>
-          <div className={styles.half}>
-            {articles.map(function (object, i) {
-              return i > 0 && i < 5 ? (
-                <SmallPost
-                  key={object.id}
-                  head={object.title}
-                  author={"Anish Majhi"}
-                  id={object.id}
-                  tags="javascript python c++ c"
-                >
-                  {object.body}
-                </SmallPost>
-              ) : null;
-            })}
-          </div>
-        </div>
-      </div>
+      <Articles articles={articles} />
     </div>
   );
 }

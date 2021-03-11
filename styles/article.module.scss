@@ -1,0 +1,27 @@
+.cage {
+  position: relative;
+}
+.post {
+  width: 60%;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .heroImage {
+    width: 100%;
+    position: relative;
+  }
+}
+.left {
+  width: 20%;
+  height: 100%;
+  display: inline-flex;
+}
+.right {
+  width: 20%;
+  height: 100%;
+  display: inline-flex;
+}
+.hero {
+  border-radius: 10px;
+}

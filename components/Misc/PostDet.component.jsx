@@ -22,7 +22,7 @@ function PostDet(props) {
       ) : null}
       {props.type != "Small" ? <DateComp /> : null}
       <div className={styles.cmt}>
-        <ChatBubbleOutlineIcon className={styles.svg} />
+        <ChatBubbleOutlineIcon className={styles.svg + " " + styles.bubble} />
         <p>{props.id}</p>
       </div>
     </div>

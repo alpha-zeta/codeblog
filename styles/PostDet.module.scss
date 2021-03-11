@@ -44,7 +44,12 @@ $accent_col: #93329e;
   width: 100%;
 }
 .insta {
-  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  p {
+    color: grey;
+    font-weight: 300;
+  }
 }
 @media only screen and (max-width: 768px) {
   .icon {

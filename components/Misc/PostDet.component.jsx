@@ -17,7 +17,9 @@ function PostDet(props) {
       <p>{props.author}</p>
       {props.type == "Large" ? (
         <Link href="https://www.instagram.com/anish_and_majhi/">
-          <a className={styles.insta}>@anish_and_majhi</a>
+          <a className={styles.insta}>
+            <p>@anish_and_majhi</p>
+          </a>
         </Link>
       ) : null}
       {props.type != "Small" ? <DateComp /> : null}

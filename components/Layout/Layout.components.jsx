@@ -10,6 +10,7 @@ const Layout = ({ children, title, description, keywords }) => {
       <Navbar />
       <main className={styles.main}>
         <div className={styles.containerPadded}>{children}</div>
+        <div className={styles.fog}></div>
       </main>
     </div>
   );

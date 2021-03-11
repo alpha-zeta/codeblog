@@ -1,5 +1,7 @@
 .cage {
   position: relative;
+  display: flex;
+  justify-items: center;
 }
 .post {
   width: 60%;
@@ -24,4 +26,73 @@
 }
 .hero {
   border-radius: 10px;
+}
+@media only screen and (max-width: 600px) {
+  .left {
+    display: none;
+  }
+  .post {
+    width: 100%;
+  }
+  .right {
+    display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 601px) {
+  .left {
+    display: none;
+  }
+  .post {
+    width: 80%;
+    margin: auto;
+  }
+  .right {
+    display: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 769px) {
+  .left {
+    display: none;
+  }
+  .post {
+    width: 80%;
+  }
+  .right {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .left {
+    display: inline-flex;
+    width: 20%;
+  }
+  .post {
+    display: inline-flex;
+    width: 60%;
+  }
+  .right {
+    display: inline-flex;
+    width: 20%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 2400px) {
+  .left {
+    display: inline-flex;
+    width: 25%;
+  }
+  .post {
+    display: inline-flex;
+    width: 50%;
+  }
+  .right {
+    display: 25%;
+  }
 }

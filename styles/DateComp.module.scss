@@ -1,4 +1,9 @@
+$accent_col: #93329e;
 .DateDiv {
   display: flex;
   align-items: center;
+  p{
+    font-weight:300;
+    color:$accent_col;
+  }
 }

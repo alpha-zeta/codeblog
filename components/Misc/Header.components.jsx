@@ -2,17 +2,43 @@ import style from "../../styles/Header.module.scss";
 function Header(props) {
   return (
     <div>
-      <h1
-        className={
-          props.type == "Big"
-            ? style.Big + " " + style.genHead
-            : props.type == "Large"
-            ? style.Large + " " + style.genHead
-            : style.Small + " " + style.genHead
-        }
-      >
-        {props.children}
-      </h1>
+      {props.weight == "h1" ? (
+        <h1
+          className={
+            props.type == "Big"
+              ? style.Big + " " + style.genHead
+              : props.type == "Large"
+              ? style.Large + " " + style.genHead
+              : style.Small + " " + style.genHead
+          }
+        >
+          {props.children}
+        </h1>
+      ) : props.weight == "h2" ? (
+        <h2
+          className={
+            props.type == "Big"
+              ? style.Big + " " + style.genHead
+              : props.type == "Large"
+              ? style.Large + " " + style.genHead
+              : style.Small + " " + style.genHead
+          }
+        >
+          {props.children}
+        </h2>
+      ) : props.weight == "h3" ? (
+        <h3
+          className={
+            props.type == "Big"
+              ? style.Big + " " + style.genHead
+              : props.type == "Large"
+              ? style.Large + " " + style.genHead
+              : style.Small + " " + style.genHead
+          }
+        >
+          {props.children}
+        </h3>
+      ) : null}
     </div>
   );
 }

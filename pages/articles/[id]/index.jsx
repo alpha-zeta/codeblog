@@ -16,7 +16,9 @@ function index(props) {
       ></META>
       <div className={styles.left}></div>
       <div className={styles.post}>
-        <Header type="Large">{props.title}</Header>
+        <Header weight="h1" type="Large">
+          {props.title}
+        </Header>
         <PostDet type="Large" author={"Anish Majhi"} id={props.id} />
         <div className={styles.heroImage}>
           <Image
@@ -26,9 +28,12 @@ function index(props) {
             height={1}
             layout="responsive"
             priority
+            alt="placeholder random image"
           />
         </div>
-        <p>{props.body}</p>
+        <div className={styles.postBody}>
+          <p>{props.body}</p>
+        </div>
       </div>
       <div className={styles.right}></div>
     </div>

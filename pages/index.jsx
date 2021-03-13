@@ -10,7 +10,7 @@ export default function Home({ articles }) {
     <div>
       <div className={styles.outer}>
         <div className={styles.rect}></div>
-        <Header type="Large" className={styles.tag}>
+        <Header weight="h1" type="Large" className={styles.tag}>
           Latest
         </Header>
       </div>

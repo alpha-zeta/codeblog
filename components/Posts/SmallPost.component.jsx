@@ -19,10 +19,13 @@ function SmallPost(props) {
               width={2}
               height={1}
               priority
+              alt="placeholder random image"
             />
           </div>
           <div className={style1.text}>
-            <Header type="Small">{props.head.slice(0, 99)}</Header>
+            <Header weight="h2" type="Small">
+              {props.head.slice(0, 99)}
+            </Header>
             <Topic type="Small">Javascript</Topic>
             <Tag type="Small" tags={props.tags} />
             <PostDet type="Small" author={props.author} id={props.id}></PostDet>

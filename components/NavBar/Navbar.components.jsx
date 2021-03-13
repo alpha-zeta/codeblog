@@ -6,7 +6,6 @@ function Navbar(props) {
   return (
     <div className={style2.container + " " + style1.nav}>
       <Logo />
-
       <ToolBar />
     </div>
   );

@@ -21,11 +21,14 @@ function BigPost(props) {
               width={2}
               height={1}
               priority
+              alt="placeholder random image"
             />
           </div>
           <div className={style1.text}>
             <Tag type="Big" tags={props.tags} />
-            <Header type="Big">{props.head}</Header>
+            <Header weight="h2" type="Big">
+              {props.head}
+            </Header>
             <Desc>{props.children.slice(0, 199)}</Desc>
             <PostDet author={props.author} id={props.id}></PostDet>
           </div>

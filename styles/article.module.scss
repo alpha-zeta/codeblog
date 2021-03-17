@@ -14,7 +14,7 @@
   .heroImage {
     width: 100%;
     position: relative;
-    margin-top:1rem;
+    margin-top: 1rem;
   }
 }
 .left {
@@ -30,19 +30,21 @@
 .hero {
   border-radius: 10px;
 }
-.postBody{
+.postBody {
   margin-top: 1rem;
   border-radius: 5px;
   background-color: #f9f3f3;
   padding: 0 1rem;
-  p{
-    font-size: 18px;
+  p {
+    font-size: 17px;
     line-height: 25px;
+    font-weight: lighter;
   }
   p::first-letter {
     font-size: 200%;
     text-transform: uppercase;
-    font-family: "Zilla Slab", serif;
+    font-family: "Zilla";
+    font-weight: bold;
   }
 }
 @media only screen and (max-width: 600px) {

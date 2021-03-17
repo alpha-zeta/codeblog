@@ -7,7 +7,7 @@ function PostDet(props) {
     <div
       className={
         props.type == "Small"
-          ? styles.icon + " " + styles.Small
+          ? styles.icon + " " + styles.small
           : props.type == "Large"
           ? styles.Large + " " + styles.icon
           : styles.icon
@@ -22,7 +22,8 @@ function PostDet(props) {
           </a>
         </Link>
       ) : null}
-      {props.type != "Small" ? <DateComp /> : null}
+      <DateComp />
+
       <div className={styles.cmt}>
         <ChatBubbleOutlineIcon className={styles.svg} />
         <p>{props.id}</p>

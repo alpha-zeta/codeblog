@@ -30,5 +30,11 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# blog site specific
+*.log
+.next
+public/sitemap.xml
+public/feed.xml
+
 # vercel
 .vercel

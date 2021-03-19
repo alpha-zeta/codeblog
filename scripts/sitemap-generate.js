@@ -2,7 +2,7 @@ const fs = require("fs");
 
 const globby = require("globby");
 const prettier = require("prettier");
-
+const arts = [1, 2, 3, 4, 5, 6];
 (async () => {
   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
   const pages = await globby([
@@ -20,16 +20,25 @@ const prettier = require("prettier");
                 const path = page
                   .replace("pages", "")
                   .replace("data", "")
-                  .replace(".js", "")
+                  .replace(".jsx", "")
                   .replace(".mdx", "");
                 const route = path === "/index" ? "" : path;
                 return `
                         <url>
-                            <loc>${`https://leerob.io${route}`}</loc>
+                            <loc>${`https://codeblog-alpha-zeta.vercel.app${route}`}</loc>
                         </url>
                     `;
               })
               .join("")}
+              ${arts
+                .map((art) => {
+                  return `
+                          <url>
+                              <loc>${`https://codeblog-alpha-zeta.vercel.app/articles/${art}`}</loc>
+                          </url>
+                      `;
+                })
+                .join("")}
         </urlset>
     `;
 

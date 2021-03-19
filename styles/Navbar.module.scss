@@ -4,12 +4,13 @@ $accent_col: #93329e;
   justify-content: space-between;
   position: sticky;
   top: 0;
-  background-color: transparent;
   z-index: 2;
   box-shadow: 0 8px 6px -6px $accent_col;
+  background-color: #fff;
 }
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .nav {
+    background-color: transparent;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }

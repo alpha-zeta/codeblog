@@ -22,6 +22,7 @@ function BigPost(props) {
               height={1}
               priority
               alt="placeholder random image"
+              objectFit="cover"
             />
           </div>
           <div className={style1.text}>

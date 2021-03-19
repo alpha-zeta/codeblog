@@ -29,6 +29,7 @@ function index(props) {
             layout="responsive"
             priority
             alt="placeholder random image"
+            objectFit="cover"
           />
         </div>
         <div className={styles.postBody}>

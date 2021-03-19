@@ -50,10 +50,19 @@ class MyDocument extends Document {
             href="/favicon/favicon-16x16.png"
           />
           <link rel="manifest" href="/favicon/site.webmanifest" />
-
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <link
+            rel="mask-icon"
+            href="/favicon/safari-pinned-tab.svg"
+            color="#5bbad5"
+          />
+          <link rel="shortcut icon" href="/favicon/favicon.ico" />
+          <meta name="msapplication-TileColor" content="#603cba" />
+          <meta
+            name="msapplication-config"
+            content="/favicon/browserconfig.xml"
+          />
           <meta name="theme-color" content="#93329e" />
-          <meta content="#93329e" name="msapplication-TileColor" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="robots" content="index, follow" />
         </Head>
         <body>

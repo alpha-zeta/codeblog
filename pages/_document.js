@@ -15,21 +15,21 @@ class MyDocument extends Document {
             href="/fonts/Meriweather/merriweather-sans-v14-latin-800.woff2"
             as="font"
             type="font/woff2"
-            crossOrigin="anonymous"
+            crossOrigin=""
           />
           <link
             rel="preload"
             href="/fonts/Meriweather/merriweather-sans-v14-latin-300.woff2"
             as="font"
             type="font/woff2"
-            crossOrigin="anonymous"
+            crossOrigin=""
           />
           <link
             rel="preload"
             href="/fonts/Zilla/ZillaSlab-Light.woff2"
             as="font"
             type="font/woff2"
-            crossOrigin="anonymous"
+            crossOrigin=""
           />
 
           <link

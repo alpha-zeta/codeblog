@@ -1,8 +1,26 @@
 import Link from "next/link";
 import style from "../../styles/ToolBar.module.scss";
+import Brightness5Icon from "@material-ui/icons/Brightness5";
+import Brightness3Icon from "@material-ui/icons/Brightness3";
+import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
+
 function ToolBar(props) {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme("DEFAULT");
+  useEffect(() => setMounted(true), []);
   return (
     <div className={style.tools}>
+      <button
+        aria-label="Toggle Dark Mode"
+        type="button"
+        className={
+          style.button + " bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10"
+        }
+        onClick={() => setTheme(mounted && theme === "dark" ? "light" : "dark")}
+      >
+        {theme === "dark" ? <Brightness3Icon /> : <Brightness5Icon />}
+      </button>
       <Link href="/">
         <a>Home</a>
       </Link>

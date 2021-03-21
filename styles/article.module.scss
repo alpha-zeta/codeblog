@@ -3,18 +3,16 @@
   display: flex;
   justify-items: center;
   padding: 0 1rem;
-  margin-top: 1rem;
+  // margin-top: 1rem;
 }
 .post {
   width: 60%;
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
   .heroImage {
     width: 100%;
     position: relative;
-    margin-top: 1rem;
   }
 }
 .left {
@@ -33,18 +31,18 @@
 .postBody {
   margin-top: 1rem;
   border-radius: 5px;
-  background-color: #f9f3f3;
   padding: 0 1rem;
+  width: 100%;
   p {
     font-size: 17px;
     line-height: 25px;
     font-weight: lighter;
   }
-  p::first-letter {
-    font-size: 200%;
-    text-transform: uppercase;
-    font-family: "Zilla";
-  }
+  // p:nth-child(1)::first-letter {
+  //   font-size: 200%;
+  //   text-transform: uppercase;
+  //   font-family: serif;
+  // }
 }
 @media only screen and (max-width: 600px) {
   .left {

@@ -5,11 +5,12 @@ function Header(props) {
       {props.weight == "h1" ? (
         <h1
           className={
-            props.type == "Big"
+            (props.type == "Big"
               ? style.Big + " " + style.genHead
               : props.type == "Large"
-              ? style.Large + " " + style.genHead
-              : style.Small + " " + style.genHead
+              ? style.genHead + " " + style.Large
+              : style.Small + " " + style.genHead) +
+            " lg:text-5xl md:text-5xl sm:text-3xl text-2xl"
           }
         >
           {props.children}
@@ -17,11 +18,12 @@ function Header(props) {
       ) : props.weight == "h2" ? (
         <h2
           className={
-            props.type == "Big"
+            (props.type == "Big"
               ? style.Big + " " + style.genHead
               : props.type == "Large"
-              ? style.Large + " " + style.genHead
-              : style.Small + " " + style.genHead
+              ? style.genHead + " " + style.Large
+              : style.Small + " " + style.genHead) +
+            " lg:text-4xl md:text-3xl sm:text-2xl text-2xl"
           }
         >
           {props.children}
@@ -29,11 +31,12 @@ function Header(props) {
       ) : props.weight == "h3" ? (
         <h3
           className={
-            props.type == "Big"
+            (props.type == "Big"
               ? style.Big + " " + style.genHead
               : props.type == "Large"
               ? style.Large + " " + style.genHead
-              : style.Small + " " + style.genHead
+              : style.Small + " " + style.genHead) +
+            " lg:text-4xl md:text-3xl sm:text-2xl text-2xl"
           }
         >
           {props.children}

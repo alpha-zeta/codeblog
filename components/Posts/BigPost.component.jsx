@@ -9,14 +9,13 @@ import Topic from "../Tag_Topics/Topic.component";
 import Link from "next/link";
 function BigPost(props) {
   return (
-    <Link href="/articles/[id]" as={`/articles/${props.id}`}>
+    <Link href={`/articles/${props.link}`} as={`/articles/${props.link}`}>
       <a className={style1.anchor}>
         <div className={style.card + " " + style1.big}>
           <div className={style1.cover}>
-            <Topic type="Big">Javascript</Topic>
+            <Topic type="Big">{props.topic}</Topic>
             <Image
               src="/images/img1.jpg"
-              alt={props.alt}
               layout="responsive"
               width={2}
               height={1}

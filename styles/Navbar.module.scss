@@ -5,13 +5,13 @@ $accent_col: #93329e;
   position: sticky;
   top: 0;
   z-index: 2;
-  box-shadow: 0 8px 6px -6px $accent_col;
+  box-shadow: 0 5px 20px -6px grey;
   background-color: #fff;
 }
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .nav {
     background-color: transparent;
     -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    backdrop-filter: saturate(180%) blur(20px);
   }
 }

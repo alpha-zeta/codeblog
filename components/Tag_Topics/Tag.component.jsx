@@ -8,11 +8,11 @@ function Tag(props) {
           <p
             key={i}
             className={
-              props.type == "Big"
+              (props.type == "Big"
                 ? styles.Big + " " + styles.tag
                 : props.type == "Large"
                 ? styles.Large + " " + styles.tag
-                : styles.Small + " " + styles.tag
+                : styles.Small + " " + styles.tag) + " font-serif"
             }
           >
             {object}

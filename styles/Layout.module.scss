@@ -6,6 +6,7 @@ $accent_col: #93329e;
 }
 .containerPadded {
   padding: 0 5rem;
+  min-height: 100vh;
 }
 .main {
   display: block;
@@ -73,11 +74,6 @@ $accent_col: #93329e;
   bottom: 0;
   width: 100%;
   height: 50px;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0),
-    rgba(255, 255, 255, 1)
-  );
 }
 @media only screen and (max-width: 600px) {
   .containerPadded {

@@ -4,7 +4,7 @@ import Logo from "./Logo.component";
 import ToolBar from "./ToolBar.components";
 function Navbar(props) {
   return (
-    <div className={style2.container + " " + style1.nav}>
+    <div className={style2.container + " " + style1.nav + " bg-opacity-50"}>
       <Logo />
       <ToolBar />
     </div>

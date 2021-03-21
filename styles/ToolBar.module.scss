@@ -8,15 +8,19 @@ $accent_col: #93329e;
   vertical-align: middle;
   align-items: center;
   a {
-    font-family: "Merriweather";
-    border-right: 1px solid rgb(229, 229, 229);
+    border-right: 3px solid rgb(229, 229, 229);
     padding: 0 0.5rem;
-    box-shadow: 5px 0 6px -6px $accent_col;
+    box-shadow: 5px 0 0px -6px $accent_col;
   }
-  a:nth-child(3) {
+  a:nth-child(4) {
     border: none;
     padding-right: 0;
     box-shadow: none;
+  }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 @media only screen and (max-width: 600px) {

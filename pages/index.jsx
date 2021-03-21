@@ -1,11 +1,11 @@
 import Head from "next/head";
 import styles from "../styles/Layout.module.scss";
-import { posts } from "../assets/posts";
 import BigPost from "../components/Posts/BigPost.component";
 import SmallPost from "../components/Posts/SmallPost.component";
 import Header from "../components/Misc/Header.components";
 import Articles from "../components/Misc/Articles.component";
-export default function Home({ articles }) {
+import { getAllFilesFrontMatter } from "../lib/mdx";
+export default function Home({ posts }) {
   return (
     <div>
       <div className={styles.outer}>
@@ -14,18 +14,13 @@ export default function Home({ articles }) {
           Latest
         </Header>
       </div>
-      <Articles articles={articles} />
+      <Articles articles={posts} />
     </div>
   );
 }
+
 export const getStaticProps = async () => {
-  const res = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?_limit=6`
-  );
-  const articles = await res.json();
-  return {
-    props: {
-      articles: articles,
-    },
-  };
+  const posts = await getAllFilesFrontMatter("Blog");
+
+  return { props: { posts } };
 };

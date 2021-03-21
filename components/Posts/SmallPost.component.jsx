@@ -8,13 +8,12 @@ import Topic from "../Tag_Topics/Topic.component";
 import Link from "next/link";
 function SmallPost(props) {
   return (
-    <Link href="/articles/[id]" as={`/articles/${props.id}`}>
+    <Link href={`/articles/${props.link}`} as={`/articles/${props.link}`}>
       <a className={style1.anchor}>
         <div className={style.card + " " + style1.small}>
           <div className={style1.cover}>
             <Image
               src="/images/img1.jpg"
-              alt={props.alt}
               layout="responsive"
               width={2}
               height={1}
@@ -27,7 +26,7 @@ function SmallPost(props) {
             <Header weight="h2" type="Small">
               {props.head.slice(0, 99)}
             </Header>
-            <Topic type="Small">Javascript</Topic>
+            <Topic type="Small">{props.topic}</Topic>
             <Tag type="Small" tags={props.tags} />
             <PostDet type="Small" author={props.author} id={props.id}></PostDet>
           </div>

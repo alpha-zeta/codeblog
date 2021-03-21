@@ -10,23 +10,27 @@ function Articles(props) {
           <BigPost
             head={articles[0].title}
             author={"Anish Majhi"}
-            id={articles[0].id}
-            tags="javascript python c++ c solution"
+            id="1"
+            tags={articles[0].tags}
+            topic={articles[0].topic}
+            link={articles[0].slug}
           >
-            {articles[0].body}
+            {articles[0].summary}
           </BigPost>
         </div>
         <div className={styles.half}>
           {articles.map(function (object, i) {
             return i > 0 && i < 5 ? (
               <SmallPost
-                key={object.id}
+                key={i}
                 head={object.title}
                 author={"Anish Majhi"}
-                id={object.id}
-                tags="javascript python c++ c"
+                id={1}
+                tags={articles[0].tags}
+                topic={articles[0].topic}
+                link={object.slug}
               >
-                {object.body}
+                {object.summary}
               </SmallPost>
             ) : null;
           })}

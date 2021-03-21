@@ -6,11 +6,11 @@ function PostDet(props) {
   return (
     <div
       className={
-        (props.type == "Small"
+        props.type == "Small"
           ? styles.icon + " " + styles.small
           : props.type == "Large"
-          ? styles.Large + " " + styles.icon
-          : styles.icon) + " my-4"
+          ? styles.Large + " " + styles.icon + " my-4"
+          : styles.icon
       }
     >
       <div className={styles.avatar}></div>

@@ -10,7 +10,7 @@ export default function Home({ posts }) {
     <div>
       <div className={styles.outer}>
         <div className={styles.rect}></div>
-        <Header weight="h1" type="Large" className={styles.tag}>
+        <Header weight="h1" type="Big" className={styles.tag}>
           Latest
         </Header>
       </div>

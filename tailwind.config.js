@@ -9,6 +9,11 @@ module.exports = {
         transparent: "transparent",
         white: "rgb(255,255,255)",
       },
+      boxShadow: {
+        none: "none",
+        customLight: "0 5px 20px -6px grey",
+        customDark: "0 5px 20px -6px black",
+      },
       fontFamily: {
         sans: ["Merriweather", ...fontFamily.sans],
         serif: ["Zilla", ...fontFamily.serif],

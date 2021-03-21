@@ -2,7 +2,8 @@ import styles from "../../styles/Layout.module.scss";
 import BigPost from "../Posts/BigPost.component";
 import SmallPost from "../Posts/SmallPost.component";
 function Articles(props) {
-  const articles = props.articles;
+  var articles = props.articles;
+  articles.reverse();
   return (
     <div className={styles.main}>
       <div className={styles.giant}>

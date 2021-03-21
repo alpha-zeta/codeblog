@@ -4,7 +4,14 @@ import Logo from "./Logo.component";
 import ToolBar from "./ToolBar.components";
 function Navbar(props) {
   return (
-    <div className={style2.container + " " + style1.nav + " bg-opacity-50"}>
+    <div
+      className={
+        style2.container +
+        " " +
+        style1.nav +
+        " bg-opacity-50 shadow-customLight dark:shadow-customDark"
+      }
+    >
       <Logo />
       <ToolBar />
     </div>

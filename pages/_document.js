@@ -65,7 +65,7 @@ class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta name="robots" content="index, follow" />
         </Head>
-        <body>
+        <body className="bg-white dark:bg-black text-white dark:text-black">
           <Main />
           <NextScript />
         </body>

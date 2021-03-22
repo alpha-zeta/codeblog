@@ -9,17 +9,28 @@ function ToolBar(props) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme("DEFAULT");
   useEffect(() => setMounted(true), []);
+  const handleTheme = (e) => {
+    if (mounted) {
+      setTheme(theme === "dark" ? "light" : "dark");
+    }
+  };
   return (
-    <div className={style.tools}>
+    <div className={style.tools + " text-gray-900 dark:text-gray-100"}>
       <button
         aria-label="Toggle Dark Mode"
         type="button"
         className={
           style.button + " bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10"
         }
-        onClick={() => setTheme(mounted && theme === "dark" ? "light" : "dark")}
+        onClick={handleTheme}
       >
-        {theme === "dark" ? <Brightness3Icon /> : <Brightness5Icon />}
+        {mounted ? (
+          theme === "dark" ? (
+            <Brightness3Icon />
+          ) : (
+            <Brightness5Icon />
+          )
+        ) : null}
       </button>
       <Link href="/">
         <a>Home</a>

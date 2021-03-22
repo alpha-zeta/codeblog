@@ -6,7 +6,7 @@ import "../styles/tailwind/globalTheme.css";
 import "../styles/globals.scss";
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider forcedTheme={Component.theme || undefined} attribute="class">
       <MDXProvider components={MDXComponents}>
         <Layout
           title="Get-coded"

@@ -18,7 +18,15 @@ const CustomLink = (props) => {
 };
 
 const MDXComponents = {
-  Image,
+  Image: (props) => (
+    <Image
+      width={500}
+      height={500}
+      objectFit="cover"
+      layout="fixed"
+      {...props}
+    />
+  ),
   a: CustomLink,
   h1: (props) => <Header weight="h2" type="Large" {...props} />,
   h2: (props) => <Header weight="h3" type="Small" {...props} />,

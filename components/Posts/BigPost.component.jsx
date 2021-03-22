@@ -29,7 +29,9 @@ function BigPost(props) {
             <Header weight="h2" type="Big">
               {props.head}
             </Header>
-            <Desc>{props.children.slice(0, 199)}</Desc>
+            <Desc className="text-gray-500 dark:text-gray-400">
+              {props.children.slice(0, 199)}
+            </Desc>
             <PostDet author={props.author} id={props.id}></PostDet>
           </div>
         </div>

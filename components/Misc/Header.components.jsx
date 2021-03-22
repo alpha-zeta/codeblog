@@ -1,17 +1,14 @@
 import style from "../../styles/Header.module.scss";
 function Header(props) {
   return (
-    <div>
+    <div className="text-gray-900 dark:text-gray-100">
       {props.weight == "h1" ? (
         <h1
           className={
             props.type == "Big"
-              ? style.Big + " " + style.genHead
+              ? style.genHead + " sm:text-4xl text-3xl"
               : props.type == "Large"
-              ? style.genHead +
-                " " +
-                style.Large +
-                " lg:text-5xl md:text-5xl sm:text-3xl text-5xl"
+              ? style.genHead + " text-5xl"
               : style.Small + " " + style.genHead
           }
         >

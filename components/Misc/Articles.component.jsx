@@ -3,7 +3,6 @@ import BigPost from "../Posts/BigPost.component";
 import SmallPost from "../Posts/SmallPost.component";
 function Articles(props) {
   var articles = props.articles;
-  articles.reverse();
   return (
     <div className={styles.main}>
       <div className={styles.giant}>

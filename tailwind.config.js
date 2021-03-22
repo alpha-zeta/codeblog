@@ -1,9 +1,12 @@
 const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
 module.exports = {
-  purge: ["./pages/**/*.jsx", "./components/**/*.jsx"],
+  purge: ["./pages/**/*.jsx", "./pages/**/*.js", "./components/**/*.jsx"],
   darkMode: "class",
   theme: {
     extend: {
+      height: {
+        screen20: "20vh",
+      },
       colors: {
         "blue-opaque": "rgb(13 42 148 / 18%)",
         transparent: "transparent",
@@ -83,5 +86,5 @@ module.exports = {
   variants: {
     typography: ["dark"],
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };

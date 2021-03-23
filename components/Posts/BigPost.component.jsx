@@ -11,7 +11,7 @@ function BigPost(props) {
   return (
     <Link href={`/articles/${props.link}`} as={`/articles/${props.link}`}>
       <a className={style1.anchor}>
-        <div className={style.card + " " + style1.big}>
+        <div className={style.card + " " + style1.big + " " + props.className}>
           <div className={style1.cover}>
             <Topic type="Big">{props.topic}</Topic>
             <Image

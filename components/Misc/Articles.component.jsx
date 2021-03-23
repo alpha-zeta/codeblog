@@ -14,11 +14,17 @@ function Articles(props) {
             tags={articles[0].tags}
             topic={articles[0].topic}
             link={articles[0].slug}
+            className="border-b-2 sm:border-0 border-gray-300 dark:border-gray-700"
           >
             {articles[0].summary}
           </BigPost>
         </div>
-        <div className={styles.half}>
+        <div
+          className={
+            styles.half +
+            " border-0 sm:border-l-2 border-gray-300 dark:border-gray-700"
+          }
+        >
           {articles.map(function (object, i) {
             return i > 0 && i < 5 ? (
               <SmallPost
@@ -29,6 +35,7 @@ function Articles(props) {
                 tags={articles[0].tags}
                 topic={articles[0].topic}
                 link={object.slug}
+                className="border-b-2 border-gray-300 dark:border-gray-700"
               >
                 {object.summary}
               </SmallPost>

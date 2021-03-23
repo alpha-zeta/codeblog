@@ -10,7 +10,9 @@ function SmallPost(props) {
   return (
     <Link href={`/articles/${props.link}`} as={`/articles/${props.link}`}>
       <a className={style1.anchor}>
-        <div className={style.card + " " + style1.small}>
+        <div
+          className={style.card + " " + style1.small + " " + props.className}
+        >
           <div className={style1.cover}>
             <Image
               src="/images/img1.jpg"

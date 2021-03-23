@@ -20,6 +20,7 @@ function Footer(props) {
           <GitHubIcon className="m-4" />
         </div>
       </div>
+      <Newsletter />
     </div>
   );
 }

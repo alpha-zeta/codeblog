@@ -243,3 +243,22 @@ table {
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
+/* Navbar */
+.nav {
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  @apply bg-gray-100 dark:bg-black;
+}
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .nav {
+    @apply bg-transparent dark:bg-transparent;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+}
+/* pageLinks */
+.pageLinks a:last-child {
+  border: none;
+}

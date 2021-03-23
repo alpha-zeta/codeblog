@@ -38,7 +38,7 @@ function ToolBar(props) {
       </button>
       <div className="inline-block sm:hidden">
         <button
-          class={expanded ? "menu opened" : "menu"}
+          className={expanded ? "menu opened" : "menu"}
           aria-expanded={expanded}
           onClick={handleSvg}
         >
@@ -60,15 +60,15 @@ function ToolBar(props) {
           </svg>
         </button>
       </div>
-      <div className="hidden sm:inline-block">
+      <div className="pagLinks hidden sm:inline-block divide-x-2 divide-gray-400 dark:divide-gray-200">
         <Link href="/">
-          <a>Home</a>
+          <a className="pl-8 pr-8">Home</a>
         </Link>
         <Link href="/about">
-          <a>About</a>
+          <a className="pl-8 pr-8">About</a>
         </Link>
         <Link href="/contact">
-          <a>Contact us</a>
+          <a className="pl-8">Contact us</a>
         </Link>
       </div>
     </div>

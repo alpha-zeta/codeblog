@@ -9,7 +9,6 @@ module.exports = {
       },
       colors: {
         "blue-opaque": "rgb(13 42 148 / 18%)",
-        transparent: "transparent",
         white: "rgb(255,255,255)",
       },
       boxShadow: {

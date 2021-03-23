@@ -15,6 +15,7 @@ function Articles(props) {
             topic={articles[0].topic}
             link={articles[0].slug}
             className="border-b-2 sm:border-0 border-gray-300 dark:border-gray-700"
+            load="true"
           >
             {articles[0].summary}
           </BigPost>
@@ -36,6 +37,7 @@ function Articles(props) {
                 topic={articles[0].topic}
                 link={object.slug}
                 className="border-b-2 border-gray-300 dark:border-gray-700"
+                load="true"
               >
                 {object.summary}
               </SmallPost>

@@ -9,7 +9,7 @@ function Navbar(props) {
         style2.container +
         " " +
         style1.nav +
-        " bg-opacity-50 shadow-customLight dark:shadow-customDark"
+        " shadow-customLight dark:shadow-customDark"
       }
     >
       <Logo />

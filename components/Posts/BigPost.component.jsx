@@ -19,7 +19,7 @@ function BigPost(props) {
               layout="responsive"
               width={2}
               height={1}
-              priority
+              priority={props.load}
               alt="placeholder random image"
               objectFit="cover"
             />

@@ -5,8 +5,7 @@ $accent_col: #93329e;
   position: sticky;
   top: 0;
   z-index: 2;
-  // box-shadow: 0 5px 20px -6px grey;
-  background-color: #fff;
+  background-color: inherit;
 }
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .nav {

@@ -15,9 +15,9 @@ function Footer(props) {
           <Desc>Copyright:2021</Desc>
         </div>
         <div className="text-left">
-          <WhatsAppIcon className="mr-4 " />
-          <FacebookIcon className="m-4" />
-          <GitHubIcon className="m-4" />
+          <WhatsAppIcon className="mr-4 hover:text-green-500 dark:hover:text-gray-400" />
+          <FacebookIcon className="m-4 hover:text-green-500 dark:hover:text-gray-400" />
+          <GitHubIcon className="m-4 hover:text-green-500 dark:hover:text-gray-400" />
         </div>
       </div>
       <Newsletter />

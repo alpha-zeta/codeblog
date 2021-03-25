@@ -13,19 +13,19 @@ function PostDet(props) {
           : styles.icon
       }
     >
-      <div className={styles.avatar}></div>
+      <div className={styles.avatar + " bg-purple-accent"}></div>
       <p>{props.author}</p>
       {props.type == "Large" ? (
         <Link href="https://www.instagram.com/anish_and_majhi/">
           <a className={styles.insta}>
-            <p>@anish_and_majhi</p>
+            <p className="colorCl">@anish_and_majhi</p>
           </a>
         </Link>
       ) : null}
-      <DateComp />
+      <DateComp className="colorCl" />
 
       <div className={styles.cmt}>
-        <ChatBubbleOutlineIcon className={styles.svg} />
+        <ChatBubbleOutlineIcon className={styles.svg + " colorCl"} />
         <p>{props.id}</p>
       </div>
     </div>

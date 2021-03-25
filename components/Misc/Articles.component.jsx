@@ -14,7 +14,7 @@ function Articles(props) {
             tags={articles[0].tags}
             topic={articles[0].topic}
             link={articles[0].slug}
-            className="border-b-2 sm:border-0 border-gray-300 dark:border-gray-700"
+            className="border-b sm:border-0 border-gray-300 dark:border-gray-700"
             load="true"
           >
             {articles[0].summary}
@@ -23,7 +23,7 @@ function Articles(props) {
         <div
           className={
             styles.half +
-            " border-0 sm:border-l-2 border-gray-300 dark:border-gray-700"
+            " border-0 sm:border-l border-gray-300 dark:border-gray-700"
           }
         >
           {articles.map(function (object, i) {
@@ -36,7 +36,7 @@ function Articles(props) {
                 tags={articles[0].tags}
                 topic={articles[0].topic}
                 link={object.slug}
-                className="border-b-2 border-gray-300 dark:border-gray-700"
+                className="border-b border-gray-300 dark:border-gray-700"
                 load="true"
               >
                 {object.summary}

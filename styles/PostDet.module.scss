@@ -9,13 +9,11 @@ $accent_col: #93329e;
   }
   display: flex;
   align-items: center;
-  margin-top: 1rem;
   position: relative;
   .avatar {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: $accent_col;
     margin-right: 0.3rem;
   }
   .svg {
@@ -33,7 +31,6 @@ $accent_col: #93329e;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: $accent_col;
     margin-right: 0.1rem;
   }
   .svg {
@@ -47,7 +44,6 @@ $accent_col: #93329e;
   display: flex;
   align-items: center;
   p {
-    color: #93329e;
     font-weight: 300;
   }
 }

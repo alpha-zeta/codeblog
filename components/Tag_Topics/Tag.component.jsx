@@ -2,7 +2,7 @@ import styles from "../../styles/Tag.module.scss";
 function Tag(props) {
   const list = props.tags.split(" ");
   return (
-    <div className={styles.tagBucket}>
+    <div className={styles.tagBucket + " colorCl"}>
       {list.map(function (object, i) {
         return (
           <p

@@ -8,10 +8,11 @@ function Topic(props) {
           ? styles.Big + " " + styles.topic
           : props.type == "Large"
           ? styles.Large + " " + styles.topic
-          : styles.Small + " " + styles.topic) + " font-serif"
+          : styles.Small + " " + styles.topic) +
+        " font-sans font-extrabold bg-indigo-200 dark:bg-gray-700 text-pink-500 dark:text-gray-200 tracking-widest"
       }
     >
-      <p>{props.children}</p>
+      <p className="m-0">{props.children}</p>
     </div>
   );
 }

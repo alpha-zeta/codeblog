@@ -251,6 +251,10 @@ table {
   z-index: 2;
   @apply bg-gray-100 dark:bg-black;
 }
+/* tags and postDet color */
+.colorCl {
+  @apply dark:text-indigo-400 text-purple-accent;
+}
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .nav {
     @apply bg-transparent dark:bg-transparent;

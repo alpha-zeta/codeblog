@@ -1,4 +1,3 @@
-import styles from "../../styles/DateComp.module.scss";
 function time_ago(time) {
   var time_formats = [
     [60, "seconds", 1], // 60
@@ -36,8 +35,8 @@ function DateComp(props) {
   const d = 1615465564417;
   const date = time_ago(d);
   return (
-    <div className={styles.DateDiv}>
-      <p>{`${date}`}</p>
+    <div className="flex items-center font-light">
+      <p {...props}>{`${date}`}</p>
     </div>
   );
 }

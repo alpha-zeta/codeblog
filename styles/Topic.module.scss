@@ -1,16 +1,10 @@
 $accent_col: #93329e;
 .topic {
-  p {
-    color: $accent_col;
-    font-weight: bold;
-    margin: 0;
-  }
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   height: fit-content;
   width: fit-content;
   padding: 5px;
-  background-color: #b4aee8;
   opacity: 0.8;
   position: absolute;
   z-index: 1;
@@ -18,11 +12,10 @@ $accent_col: #93329e;
 }
 .Small {
   margin-top: 5px;
-  padding: 2px;
+  padding: 2px 4px;
   display: inline-flex;
   align-items: center;
   position: static;
-  background-color: #b4aee8;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 5px;

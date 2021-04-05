@@ -9,7 +9,7 @@ function Navbar(props) {
       }
     >
       <Logo />
-      <ToolBar />
+      <ToolBar user={props.user} />
     </div>
   );
 }

@@ -4,11 +4,15 @@ import Brightness5Icon from "@material-ui/icons/Brightness5";
 import Brightness3Icon from "@material-ui/icons/Brightness3";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-
+import { signInWithGoogle } from "../../utils/firebase";
+import { auth } from "../../utils/firebase";
 function ToolBar(props) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme("DEFAULT");
   const [expanded, setExp] = useState(false);
+  // if (props.user) {
+  //   console.log(props.user.displayName);
+  // }
   useEffect(() => setMounted(true), []);
   const handleTheme = (e) => {
     if (mounted) {
@@ -24,7 +28,8 @@ function ToolBar(props) {
         aria-label="Toggle Dark Mode"
         type="button"
         className={
-          style.button + " bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10"
+          style.button +
+          " bg-gray-200 hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 rounded p-3 h-10 w-10 focus:outline-none "
         }
         onClick={handleTheme}
       >
@@ -36,7 +41,7 @@ function ToolBar(props) {
           )
         ) : null}
       </button>
-      <div className="inline-block sm:hidden">
+      <div className="inline-block sm:hidden focus:outline-none">
         <button
           className={expanded ? "menu opened" : "menu"}
           aria-expanded={expanded}
@@ -60,16 +65,28 @@ function ToolBar(props) {
           </svg>
         </button>
       </div>
-      <div className="pagLinks hidden sm:inline-block divide-x-2 divide-gray-400 dark:divide-gray-200">
+      <div className="pageLinks hidden sm:inline-block divide-x-2 divide-gray-400 dark:divide-gray-200">
         <Link href="/">
           <a className="pl-8 pr-8">Home</a>
         </Link>
         <Link href="/about">
           <a className="pl-8 pr-8">About</a>
         </Link>
-        <Link href="/contact">
-          <a className="pl-8">Contact us</a>
-        </Link>
+        {props.user && mounted ? (
+          <button
+            className="bg-transparent focus:outline-none pl-8"
+            onClick={() => auth.signOut()}
+          >
+            Sign Out
+          </button>
+        ) : (
+          <button
+            className="bg-transparent focus:outline-none pl-8"
+            onClick={signInWithGoogle}
+          >
+            Sign In
+          </button>
+        )}
       </div>
     </div>
   );

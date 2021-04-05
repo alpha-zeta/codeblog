@@ -4,17 +4,29 @@ import Image from "next/image";
 import Header from "../Misc/Header.components";
 import PostDet from "../Misc/PostDet.component";
 import META from "../Layout/Meta.components";
+import commentList from "../../assets/Comments/comments";
+import Comments from "../Posts/Comments.component";
+import SocialShare from "../Misc/SocialShare.component";
 function ArticlePage({ children, frontMatter }) {
   const router = useRouter();
-  const query = router.query;
+  const tPath = router.asPath;
+  const pathName = `https://codeblog-alpha-zeta.vercel.app/articles${tPath}`;
   return (
     <div className={styles.cage + " my-8"}>
       <META
         title={frontMatter.title}
         description={frontMatter.summary}
         keywords={frontMatter.keywords}
+        imageLink="https://codeblog-alpha-zeta.vercel.app/images/img1.jpg"
       ></META>
-      <div className={styles.left}></div>
+      <div className={styles.left}>
+        <SocialShare
+          url={pathName}
+          title={frontMatter.title}
+          quote={frontMatter.summary}
+          hashtag={frontMatter.hashtag}
+        />
+      </div>
       <div className={styles.post}>
         <Header weight="h1" type="Large">
           {frontMatter.title}
@@ -51,6 +63,7 @@ function ArticlePage({ children, frontMatter }) {
         </div>
       </div>
       <div className={styles.right}></div>
+      <Comments comments={commentList} />
     </div>
   );
 }

@@ -93,6 +93,12 @@ body {
 .prose > :last-child {
   margin-bottom: 1.25em !important;
 }
+.prose .h2 .Large {
+  @apply text-2xl sm:text-3xl;
+}
+.prose .h3 .Large {
+  @apply text-xl sm:text-2xl;
+}
 
 .token.comment,
 .token.prolog,
@@ -254,6 +260,41 @@ table {
 /* tags and postDet color */
 .colorCl {
   @apply dark:text-indigo-400 text-purple-accent;
+}
+/* avatar */
+.avatar {
+  @apply w-6 h-6 rounded-full;
+}
+/* headings */
+/* h1 */
+.h1 .Big {
+  @apply sm:text-4xl text-3xl;
+}
+.h1 .Large {
+  @apply text-5xl;
+}
+.h1 .Small {
+  @apply text-2xl sm:text-3xl;
+}
+/* h2 */
+.h2 .Big {
+  @apply text-xl sm:text-4xl;
+}
+.h2 .Large {
+  @apply text-4xl;
+}
+.h2 .Small {
+  @apply text-sm sm:text-lg;
+}
+/* h3 */
+.h3 .Big {
+  @apply sm:text-3xl text-2xl;
+}
+.h3 .Large {
+  @apply text-4xl;
+}
+.h3 .Small {
+  @apply text-lg sm:text-xl;
 }
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .nav {

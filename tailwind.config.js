@@ -7,6 +7,9 @@ module.exports = {
       height: {
         screen20: "20vh",
       },
+      width: {
+        "60%": "60%",
+      },
       colors: {
         "blue-opaque": "rgb(13 42 148 / 18%)",
         white: "rgb(255,255,255)",

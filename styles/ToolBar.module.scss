@@ -16,7 +16,8 @@ $accent_col: #93329e;
 
 @media only screen and (max-width: 600px) {
   .tools {
-    a {
+    a,
+    button {
       font-size: 0.9rem;
     }
   }
@@ -25,7 +26,8 @@ $accent_col: #93329e;
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 601px) and (max-width: 768px) {
   .tools {
-    a {
+    a,
+    button {
       font-size: 1.3rem;
     }
   }
@@ -34,7 +36,8 @@ $accent_col: #93329e;
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 769px) {
   .tools {
-    a {
+    a,
+    button {
       font-size: 1.5rem;
     }
   }
@@ -43,7 +46,8 @@ $accent_col: #93329e;
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   .tools {
-    a {
+    a,
+    button {
       font-size: 1.5rem;
     }
   }
@@ -52,7 +56,8 @@ $accent_col: #93329e;
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 2400px) {
   .tools {
-    a {
+    a,
+    button {
       font-size: 2.5rem;
     }
   }

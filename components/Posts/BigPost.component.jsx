@@ -26,7 +26,7 @@ function BigPost(props) {
           </div>
           <div className={style1.text}>
             <Tag type="Big" tags={props.tags} />
-            <Header weight="h2" type="Big">
+            <Header weight="h2" type="Big" className="my-0.5 sm:my-2">
               {props.head}
             </Header>
             <Desc className="text-gray-500 dark:text-gray-400">

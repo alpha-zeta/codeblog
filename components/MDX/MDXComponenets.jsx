@@ -20,11 +20,12 @@ const CustomLink = (props) => {
 const MDXComponents = {
   Image: (props) => (
     <Image
-      width={500}
-      height={500}
+      width={2}
+      height={1}
       objectFit="cover"
-      layout="fixed"
+      layout="responsive"
       {...props}
+      className="m-auto"
     />
   ),
   a: CustomLink,

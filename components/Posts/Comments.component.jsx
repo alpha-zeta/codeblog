@@ -4,7 +4,7 @@ import CommentForm from "../Forms/commentForm.component";
 import Comment from "./Comment.componenet";
 function Comments(props) {
   return (
-    <div className="block m-auto w-full sm:w-60% my-4 px-4">
+    <div className="block m-auto w-full my-8">
       <Header weight="h3" type="Big">
         Comments
       </Header>

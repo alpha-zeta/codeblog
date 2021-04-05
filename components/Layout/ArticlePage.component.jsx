@@ -10,24 +10,38 @@ import SocialShare from "../Misc/SocialShare.component";
 function ArticlePage({ children, frontMatter }) {
   const router = useRouter();
   const tPath = router.asPath;
-  const pathName = `https://codeblog-alpha-zeta.vercel.app/articles${tPath}`;
+  const pathName = `https://codeblog-alpha-zeta.vercel.app${tPath}`;
   return (
-    <div className={styles.cage + " my-8"}>
+    <div className={styles.cage + " my-8 grid grid-cols-10 gap-0"}>
       <META
         title={frontMatter.title}
         description={frontMatter.summary}
         keywords={frontMatter.keywords}
         imageLink="https://codeblog-alpha-zeta.vercel.app/images/img1.jpg"
       ></META>
-      <div className={styles.left}>
+      <div
+        className={
+          styles.left +
+          " m-auto mt-2 col-span-0 sm:col-span-1 lg:col-span-2 hidden sm:block "
+        }
+      >
+        <div
+          className={
+            styles.share +
+            " bg-gray-500 dark:bg-gray-700 text-gray-200 p-2 cursor-default hidden lg:block"
+          }
+        >
+          <p className="m-auto text-center">Share</p>
+        </div>
         <SocialShare
           url={pathName}
           title={frontMatter.title}
           quote={frontMatter.summary}
           hashtag={frontMatter.hashtag}
+          className="hidden lg:block"
         />
       </div>
-      <div className={styles.post}>
+      <div className={styles.post + " col-span-10 sm:col-span-8 lg:col-span-6"}>
         <Header weight="h1" type="Large">
           {frontMatter.title}
         </Header>
@@ -61,9 +75,21 @@ function ArticlePage({ children, frontMatter }) {
         >
           {children}
         </div>
+        <Comments comments={commentList} />
       </div>
-      <div className={styles.right}></div>
-      <Comments comments={commentList} />
+      <div
+        className={
+          styles.right + " col-span-10 sm:col-span-1 lg:col-span-2 block"
+        }
+      >
+        <SocialShare
+          url={pathName}
+          title={frontMatter.title}
+          quote={frontMatter.summary}
+          hashtag={frontMatter.hashtag}
+          className="block lg:hidden"
+        />
+      </div>
     </div>
   );
 }

@@ -6,7 +6,7 @@ import {
 } from "react-share";
 function SocialShare(props) {
   return (
-    <div>
+    <div className={props.className}>
       <FacebookShareButton
         url={props.url}
         quote={props.quote}

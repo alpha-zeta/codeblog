@@ -10,9 +10,6 @@ function ToolBar(props) {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme("DEFAULT");
   const [expanded, setExp] = useState(false);
-  // if (props.user) {
-  //   console.log(props.user.displayName);
-  // }
   useEffect(() => setMounted(true), []);
   const handleTheme = (e) => {
     if (mounted) {
@@ -72,7 +69,7 @@ function ToolBar(props) {
         <Link href="/about">
           <a className="pl-8 pr-8">About</a>
         </Link>
-        {props.user && mounted ? (
+        {mounted?props.user ? (
           <button
             className="bg-transparent focus:outline-none pl-8"
             onClick={() => auth.signOut()}
@@ -86,7 +83,7 @@ function ToolBar(props) {
           >
             Sign In
           </button>
-        )}
+        ):null}
       </div>
     </div>
   );

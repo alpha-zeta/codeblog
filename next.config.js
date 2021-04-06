@@ -4,7 +4,7 @@ module.exports = {
     strictPostcssConfiguration: true,
   },
   images: {
-    domains: [],
+    domains: ["res.cloudinary.com"],
   },
   webpack: (config, { dev, isServer }) => {
     if (isServer) {

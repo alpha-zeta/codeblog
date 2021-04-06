@@ -15,7 +15,7 @@ export default function Home({ posts }) {
         title="Get-coded"
         keywords="web-development discussion solution coding code"
         description="website for coding soltions and demistification"
-        imageLink="https://codeblog-alpha-zeta.vercel.app/images/img1.jpg"
+        imageLink="img1_vusmzz"
       ></META>
       <div className={styles.outer}>
         <div className={styles.rect}></div>

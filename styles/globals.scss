@@ -19,12 +19,6 @@ body {
     }
   }
 }
-img {
-  transition: all 1s ease-in-out;
-}
-img:hover {
-  transform: scale(1.1);
-}
 body::-webkit-scrollbar {
   width: 1em;
 }

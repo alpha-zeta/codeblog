@@ -9,7 +9,9 @@ import Comments from "../Posts/Comments.component";
 import SocialShare from "../Misc/SocialShare.component";
 import AuthorCard from "../Misc/AuthorCard.component";
 import ShareIcon from "@material-ui/icons/Share";
-function ArticlePage({ children, frontMatter }) {
+import ImageComp from "../Misc/ImageComp.component";
+import Searchbar from "../Forms/Searchbar.component";
+function ArticlePage({ children, frontMatter, user }) {
   const router = useRouter();
   const tPath = router.asPath;
   const pathName = `https://codeblog-alpha-zeta.vercel.app${tPath}`;
@@ -58,15 +60,13 @@ function ArticlePage({ children, frontMatter }) {
 
         <PostDet type="Large" author={"Anish Majhi"} id={frontMatter.id} />
         <div className={styles.heroImage}>
-          <Image
+          <ImageComp
+            type="hero"
+            width={1200}
+            height={627}
             className="hero"
-            src="/images/img1.jpg"
-            width={2}
-            height={1}
-            layout="responsive"
-            priority
-            alt="placeholder random image"
-            objectFit="cover"
+            imageLink={frontMatter.imageID}
+            show="fill"
           />
         </div>
         <div
@@ -86,14 +86,18 @@ function ArticlePage({ children, frontMatter }) {
           className="block lg:hidden m-auto mt-4"
           url={pathName}
         />
-        <Comments comments={commentList} />
+        <Comments id={frontMatter.id} comments={commentList} />
       </div>
       <div
         className={
           styles.right + " lg:pl-8 col-span-10 lg:col-span-2 block lg:m-auto"
         }
       >
-        <AuthorCard className="mb-4" />
+        <Searchbar
+          className="hidden sm:inline-flex"
+          zonespec="justify-between"
+        />
+        <AuthorCard className="my-4" />
       </div>
     </div>
   );

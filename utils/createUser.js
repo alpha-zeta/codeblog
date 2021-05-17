@@ -12,6 +12,7 @@ const createUser = async (userAuth, additionalData) => {
         displayName,
         email,
         createdAt,
+        img: "https://robohash.org/" + displayName + ".png?size=256x256",
         ...additionalData,
       });
     } catch (err) {

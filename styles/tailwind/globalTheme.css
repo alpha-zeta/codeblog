@@ -251,7 +251,6 @@ table {
 }
 /* Navbar */
 .nav {
-  justify-content: space-between;
   position: sticky;
   top: 0;
   z-index: 2;
@@ -306,4 +305,29 @@ table {
 /* pageLinks */
 .pageLinks a:last-child {
   border: none;
+}
+.sidebar {
+  width: 75%;
+  left: -100%;
+  top: 0;
+  transition: left 350ms ease-in;
+}
+.expandedActive {
+  left: 0;
+}
+.searchInput {
+  width: 100%;
+}
+.sideMenu a,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }

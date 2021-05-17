@@ -12,16 +12,15 @@ var firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
-
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
 const firestore = firebase.firestore();
 const auth = firebase.auth();
-export { firestore, auth };
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+const signInWithGoogle = () => auth.signInWithPopup(provider);
+export { firestore, auth, signInWithGoogle };
 export default firebase;

@@ -4,7 +4,7 @@ module.exports = {
     strictPostcssConfiguration: true,
   },
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ["res.cloudinary.com", "robohash.org"],
   },
   webpack: (config, { dev, isServer }) => {
     if (isServer) {

@@ -32,11 +32,19 @@ function time_ago(time) {
   return time;
 }
 function DateComp(props) {
-  const d = 1615465564417;
+  const d = props.ms;
   const date = time_ago(d);
   return (
-    <div className="flex items-center font-light">
-      <p {...props}>{`${date}`}</p>
+    <div>
+      {props.bypass == "false" ? (
+        <div className="inline-flex font-light">
+          <p {...props}>{`${date}`}</p>
+        </div>
+      ) : (
+        <div className="inline-flex font-light">
+          <p {...props}>{`Just now`}</p>
+        </div>
+      )}
     </div>
   );
 }

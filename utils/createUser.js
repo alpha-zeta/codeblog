@@ -8,11 +8,12 @@ const createUser = async (userAuth, additionalData) => {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
     try {
+      const rand = Math.random().toString(36).substring(7);
       await userRef.set({
         displayName,
         email,
         createdAt,
-        img: "https://robohash.org/" + displayName + ".png?size=256x256",
+        img: "https://robohash.org/" + displayName + rand + ".png?size=256x256",
         ...additionalData,
       });
     } catch (err) {

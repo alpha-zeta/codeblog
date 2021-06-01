@@ -21,8 +21,8 @@ function AuthProvider({ children }) {
           setLogged(true);
         });
       } else {
-        setUserDet(userAuth);
         setLogged(false);
+        setUserDet(userAuth);
       }
     });
     return () => unsubscribeFromAuth();

@@ -8,6 +8,7 @@ import { auth } from "../utils/firebase";
 import { useEffect, useState } from "react";
 import createUser from "../utils/createUser";
 import AuthProvider from "./../context/AuthProvider.context";
+
 function MyApp({ Component, pageProps }) {
   const [currUser, setUser] = useState(null);
   return (

@@ -11,10 +11,25 @@ import AuthorCard from "../Misc/AuthorCard.component";
 import ShareIcon from "@material-ui/icons/Share";
 import ImageComp from "../Misc/ImageComp.component";
 import Searchbar from "../Forms/Searchbar.component";
+import { useEffect, useState } from "react";
+import { firestore } from "./../../utils/firebase";
 function ArticlePage({ children, frontMatter, user }) {
   const router = useRouter();
   const tPath = router.asPath;
   const pathName = `https://codeblog-alpha-zeta.vercel.app${tPath}`;
+  const [social, setSocial] = useState(null);
+  useEffect(() => {
+    let res = null;
+    const cleanUp = firestore
+      .collection("posts")
+      .where("pid", "==", frontMatter.pid)
+      .onSnapshot(async (snapshot) => {
+        res = snapshot.docs.map((docu) => {
+          setSocial(docu.data());
+        });
+      });
+    return () => cleanUp();
+  }, [frontMatter.pid]);
   return (
     <div className={styles.cage + " my-8 grid grid-cols-10 gap-0"}>
       <META
@@ -58,7 +73,7 @@ function ArticlePage({ children, frontMatter, user }) {
           <p>{frontMatter.summary}</p>
         </div>
 
-        <PostDet type="Large" author={"Anish Majhi"} id={frontMatter.id} />
+        <PostDet type="Large" author={"Anish Majhi"} pid={frontMatter.pid} />
         <div className={styles.heroImage}>
           <ImageComp
             type="hero"
@@ -86,7 +101,12 @@ function ArticlePage({ children, frontMatter, user }) {
           className="block lg:hidden m-auto mt-4"
           url={pathName}
         />
-        <Comments id={frontMatter.id} comments={commentList} />
+        <Comments
+          pid={frontMatter.pid}
+          comments={commentList}
+          like={social != null ? social.like : 0}
+          dlike={social != null ? social.dislike : 0}
+        />
       </div>
       <div
         className={

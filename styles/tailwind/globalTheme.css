@@ -318,6 +318,9 @@ table {
 .searchInput {
   width: 100%;
 }
+.sideMenu {
+  top: 33%;
+}
 .sideMenu a,
 a:hover,
 a:active {

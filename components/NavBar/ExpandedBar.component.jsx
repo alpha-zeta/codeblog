@@ -26,7 +26,7 @@ function ExpandedBar(props) {
           className="inline-flex sm:hidden w-full p-4"
           zonespec="justify-between"
         />
-        <ul className="text-3xl h-full inline-flex flex-col w-full justify-center sideMenu">
+        <ul className="text-3xl h-auto inline-block sticky w-full sideMenu">
           <Header weight="h3" type="Large" className="text-center mb-8">
             Menu
           </Header>

@@ -10,7 +10,7 @@ function Articles(props) {
           <BigPost
             head={articles[0].title}
             author={"Anish Majhi"}
-            id="1"
+            id={articles[0].pid}
             tags={articles[0].tags}
             topic={articles[0].topic}
             link={articles[0].slug}
@@ -32,9 +32,9 @@ function Articles(props) {
                 key={i}
                 head={object.title}
                 author={"Anish Majhi"}
-                id={1}
-                tags={articles[0].tags}
-                topic={articles[0].topic}
+                id={object.pid}
+                tags={object.tags}
+                topic={object.topic}
                 link={object.slug}
                 className="border-b border-gray-300 dark:border-gray-700"
                 load="true"

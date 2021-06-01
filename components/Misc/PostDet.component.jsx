@@ -28,11 +28,11 @@ function PostDet(props) {
           </a>
         </Link>
       ) : null}
-      <DateComp className="colorCl" />
+      <DateComp className="colorCl" ms="1615465564417" bypass="false" />
 
       <div className={styles.cmt}>
         <ChatBubbleOutlineIcon className={styles.svg + " colorCl"} />
-        <p>{props.id}</p>
+        <p>{props.pid}</p>
       </div>
     </div>
   );

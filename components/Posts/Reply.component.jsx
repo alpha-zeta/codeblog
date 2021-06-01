@@ -1,17 +1,11 @@
-import CommentForm from "../Forms/commentForm.component";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Header from "../Misc/Header.components";
 import { firestore } from "./../../utils/firebase";
 import { MdDeleteSweep } from "react-icons/md";
 import DateComp from "../Misc/DateComp.componenet";
-function Comment(props) {
-  const node = useRef();
-  const [showReply, setReply] = useState(false);
+function Reply(props) {
   const [writer, setWriter] = useState(null);
-  const openReply = (e) => {
-    setReply(true);
-  };
   useEffect(() => {
     if (props.uid != null) {
       firestore
@@ -25,25 +19,10 @@ function Comment(props) {
       setWriter(null);
     }
   }, [props.uid]);
-  const closeReply = (e) => {
-    if (node.current.contains(e.target)) {
-      return;
-    }
-    setReply(false);
-  };
   const handleDelete = (e) => {
     firestore
       .collection("replies")
-      .where("cid", "==", props.cid)
-      .get()
-      .then(function (snapshot) {
-        snapshot.forEach(function (doc) {
-          doc.ref.delete();
-        });
-      });
-    firestore
-      .collection("comments")
-      .doc(props.cid)
+      .doc(props.rid)
       .delete()
       .then(() => {
         console.log("Document successfully deleted!");
@@ -52,16 +31,6 @@ function Comment(props) {
         console.error("Error removing document: ", error);
       });
   };
-  useEffect(() => {
-    if (showReply) {
-      document.addEventListener("mousedown", closeReply);
-    } else {
-      document.removeEventListener("mousedown", closeReply);
-    }
-    return () => {
-      document.removeEventListener("mousedown", closeReply);
-    };
-  }, [showReply]);
   return (
     <div>
       {writer != null ? (
@@ -81,11 +50,6 @@ function Comment(props) {
             >
               {writer.displayName}
             </Header>
-            {writer.id == "DGu0R6g8dJTlk5Deuh9AbaDuLyw1" ? (
-              <div className="inline-block text-xs colorCl ml-2">
-                <p>(Author)</p>
-              </div>
-            ) : null}
             <div className="inline-flex absolute right-0 items-center">
               {props.createdAt != null ? (
                 <div className="inline-block mr-4">
@@ -111,28 +75,12 @@ function Comment(props) {
             </div>
           </div>
           <div className="px-4 py-2 text-md sm:text-base text-gray-800 dark:text-gray-300">
-            <p>{props.comment}</p>
+            <p>{props.reply}</p>
           </div>
-          {props.logged ? (
-            <div className="reply px-4 pb-4" ref={node}>
-              {showReply ? (
-                <div>
-                  <CommentForm cid={props.cid} type="reply" />
-                </div>
-              ) : (
-                <button
-                  className="focus:outline-none font-bold"
-                  onClick={openReply}
-                >
-                  &#60; REPLY &#62;
-                </button>
-              )}
-            </div>
-          ) : null}
         </div>
       ) : null}
     </div>
   );
 }
 
-export default Comment;
+export default Reply;

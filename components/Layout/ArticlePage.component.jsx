@@ -25,7 +25,7 @@ function ArticlePage({ children, frontMatter, user }) {
       .where("pid", "==", frontMatter.pid)
       .onSnapshot(async (snapshot) => {
         res = snapshot.docs.map((docu) => {
-          setSocial(docu.data());
+          setSocial({ id: docu.id, ...docu.data() });
         });
       });
     return () => cleanUp();
@@ -103,6 +103,7 @@ function ArticlePage({ children, frontMatter, user }) {
         />
         <Comments
           pid={frontMatter.pid}
+          id={social.id}
           comments={commentList}
           like={social != null ? social.like : 0}
           dlike={social != null ? social.dislike : 0}

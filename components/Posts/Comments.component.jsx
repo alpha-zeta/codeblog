@@ -8,7 +8,22 @@ import { AuthContext } from "../../context/AuthProvider.context";
 import Replies from "./Replies.component";
 function Comments(props) {
   const [comments, setComments] = useState([]);
+  const [like, setLike] = useState(0);
   const { status, user } = useContext(AuthContext);
+  const handleLike = (e) => {
+    if (like == 0 || like == 2) {
+      setLike(1);
+    } else if (like == 1) {
+      setLike(0);
+    }
+  };
+  const handleDislike = (e) => {
+    if (like == 0 || like == 1) {
+      setLike(2);
+    } else if (like == 2) {
+      setLike(0);
+    }
+  };
   useEffect(() => {
     const cleanUp = firestore
       .collection("comments")
@@ -30,13 +45,23 @@ function Comments(props) {
           <p>Please login to comment, reply and react.</p>
         </div>
       )}
-      <div className="justify-center">
+      <div className="flex justify-center">
         <div className="inline-block">
-          <AiFillLike className="text-5xl mb-2 mr-2 block cursor-pointer text-red-500" />
+          <AiFillLike
+            onClick={handleLike}
+            className={`${
+              like == 1 ? "text-blue-600" : null
+            } text-5xl mb-2 mr-2 block cursor-pointer`}
+          />
           <p>{props.like == null ? 0 : props.like}</p>
         </div>
         <div className="inline-block">
-          <AiFillDislike className="text-5xl mt-2 ml-2 block cursor-pointer" />
+          <AiFillDislike
+            onClick={handleDislike}
+            className={`${
+              like == 2 ? "text-red-600" : null
+            } text-5xl mt-2 ml-2 block cursor-pointer`}
+          />
           <p>{props.dlike == null ? 0 : props.dlike}</p>
         </div>
       </div>

@@ -6,10 +6,14 @@ import Link from "next/link";
 function Searchbar(props) {
   const [active, setActive] = useState(false);
   const { posts } = useContext(PostContext);
+  const [foc, setFoc] = useState(false);
   const handleSearch = (e) => {
     e.preventDefault();
   };
   const [query, setQuery] = useState("");
+  const handleFocus = (e) => {
+    setFoc(true);
+  };
   const handleQuery = (e) => {
     setQuery(e.target.value);
   };
@@ -17,8 +21,10 @@ function Searchbar(props) {
     setActive(true);
   };
   const removeMenu = (e) => {
-    setActive(false);
-    setQuery("");
+    if (foc != true) {
+      setActive(false);
+      setQuery("");
+    }
   };
   let inputs = [];
   if (query != "") {
@@ -30,7 +36,6 @@ function Searchbar(props) {
   return (
     <div
       className={"relative justify-end " + props.className}
-      onBlur={removeMenu}
       onFocus={showMenu}
     >
       <div
@@ -64,7 +69,7 @@ function Searchbar(props) {
             ? inputs.map((val, key) => {
                 return (
                   <Link href={"/articles/" + val.slug}>
-                    <a key={key}>
+                    <a onClick={removeMenu} key={key}>
                       <div className="block my-2 px-2 hover:bg-gray-300 dark:hover:bg-gray-700">
                         <p key={key}>{val.title}</p>
                       </div>

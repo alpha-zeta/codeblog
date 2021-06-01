@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import style from "../../styles/ToolBar.module.scss";
+import { PostContext } from "../../context/PostProvider.context";
+import Link from "next/link";
 function Searchbar(props) {
   const [active, setActive] = useState(false);
+  const { posts } = useContext(PostContext);
   const handleSearch = (e) => {
     e.preventDefault();
   };
@@ -17,16 +20,19 @@ function Searchbar(props) {
     setActive(false);
     setQuery("");
   };
-  const outputs = ["apple", "nokia", "sony"];
   let inputs = [];
   if (query != "") {
-    inputs = outputs.filter((output) => output.includes(query));
+    inputs = posts.filter((post) => post.title.includes(query));
   } else {
     inputs = [];
   }
 
   return (
-    <div className={"relative justify-end " + props.className}>
+    <div
+      className={"relative justify-end " + props.className}
+      onBlur={removeMenu}
+      onFocus={showMenu}
+    >
       <div
         className={
           props.zonespec +
@@ -36,8 +42,6 @@ function Searchbar(props) {
         <input
           type="search"
           onChange={handleQuery}
-          onFocus={showMenu}
-          onBlur={removeMenu}
           value={query}
           className=" mr-4 p-2 rounded bg-gray-200 dark:bg-gray-800 searchInput"
           placeholder="Put your query here..."
@@ -51,13 +55,22 @@ function Searchbar(props) {
         >
           <BsSearch />
         </button>
-        <div className="block w-full bg-white text-black rounded mt-4 px-2 absolute top-full z-10 text-left">
+        <div
+          className={`${
+            inputs.length == 0 ? "border-none " : ""
+          } block w-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded mt-4 px-2 absolute top-full z-10 text-left border-2 border-gray-500`}
+        >
           {inputs.length && active > 0
             ? inputs.map((val, key) => {
                 return (
-                  <div className="block">
-                    <p key={key}>{val}</p>
-                  </div>
+                  <Link href={"/articles/" + val.slug}>
+                    <a key={key}>
+                      <div className="block my-2 px-2 hover:bg-gray-300 dark:hover:bg-gray-700">
+                        <p key={key}>{val.title}</p>
+                      </div>
+                      <hr />
+                    </a>
+                  </Link>
                 );
               })
             : null}

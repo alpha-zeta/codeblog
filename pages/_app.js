@@ -8,17 +8,20 @@ import { auth } from "../utils/firebase";
 import { useEffect, useState } from "react";
 import createUser from "../utils/createUser";
 import AuthProvider from "./../context/AuthProvider.context";
+import PostProvider from "../context/PostProvider.context";
 
 function MyApp({ Component, pageProps }) {
   const [currUser, setUser] = useState(null);
   return (
     <ThemeProvider forcedTheme={Component.theme || undefined} attribute="class">
       <AuthProvider>
-        <MDXProvider components={MDXComponents}>
-          <Layout>
-            <Component {...pageProps} />
-          </Layout>
-        </MDXProvider>
+        <PostProvider>
+          <MDXProvider components={MDXComponents}>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+          </MDXProvider>
+        </PostProvider>
       </AuthProvider>
     </ThemeProvider>
   );

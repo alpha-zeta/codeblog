@@ -103,7 +103,7 @@ function ArticlePage({ children, frontMatter, user }) {
         />
         <Comments
           pid={frontMatter.pid}
-          id={social.id}
+          id={social != null ? social.id : 0}
           comments={commentList}
           like={social != null ? social.like : 0}
           dlike={social != null ? social.dislike : 0}

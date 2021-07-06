@@ -28,7 +28,9 @@ function Searchbar(props) {
   };
   let inputs = [];
   if (query != "") {
-    inputs = posts.filter((post) => post.title.includes(query));
+    inputs = posts.filter((post) =>
+      post.title.toLowerCase().includes(query.toLowerCase())
+    );
   } else {
     inputs = [];
   }
@@ -70,10 +72,12 @@ function Searchbar(props) {
                 return (
                   <Link href={"/articles/" + val.slug}>
                     <a onClick={removeMenu} key={key}>
-                      <div className="block my-2 px-2 hover:bg-gray-300 dark:hover:bg-gray-700">
+                      <div className="block my-2 px-2 py-1 hover:bg-gray-300 dark:hover:bg-gray-700 cursor-pointer rounded-sm">
                         <p key={key}>{val.title}</p>
                       </div>
-                      <hr />
+                      {key < inputs.length - 1 ? (
+                        <hr className="border-gray-500" />
+                      ) : null}
                     </a>
                   </Link>
                 );

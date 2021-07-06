@@ -105,8 +105,8 @@ function ArticlePage({ children, frontMatter, user }) {
           pid={frontMatter.pid}
           id={social != null ? social.id : 0}
           comments={commentList}
-          like={social != null ? social.like : 0}
-          dlike={social != null ? social.dislike : 0}
+          like={social == null ? null : social.like}
+          dlike={social == null ? null : social.dislike}
         />
       </div>
       <div

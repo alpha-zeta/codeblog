@@ -3,27 +3,12 @@ import CommentForm from "../Forms/commentForm.component";
 import Comment from "./Comment.componenet";
 import { useContext, useEffect, useState } from "react";
 import { firestore } from "./../../utils/firebase";
-import { AiFillLike, AiFillDislike } from "react-icons/ai";
 import { AuthContext } from "../../context/AuthProvider.context";
 import Replies from "./Replies.component";
+import Interaction from "./Interaction.component";
 function Comments(props) {
   const [comments, setComments] = useState([]);
-  const [like, setLike] = useState(0);
   const { status, user } = useContext(AuthContext);
-  const handleLike = (e) => {
-    if (like == 0 || like == 2) {
-      setLike(1);
-    } else if (like == 1) {
-      setLike(0);
-    }
-  };
-  const handleDislike = (e) => {
-    if (like == 0 || like == 1) {
-      setLike(2);
-    } else if (like == 2) {
-      setLike(0);
-    }
-  };
   useEffect(() => {
     const cleanUp = firestore
       .collection("comments")
@@ -45,26 +30,16 @@ function Comments(props) {
           <p>Please login to comment, reply and react.</p>
         </div>
       )}
-      <div className="flex justify-center">
-        <div className="inline-block">
-          <AiFillLike
-            onClick={handleLike}
-            className={`${
-              like == 1 ? "text-blue-600" : null
-            } text-5xl mb-2 mr-2 block cursor-pointer`}
-          />
-          <p>{props.like == null ? 0 : props.like}</p>
-        </div>
-        <div className="inline-block">
-          <AiFillDislike
-            onClick={handleDislike}
-            className={`${
-              like == 2 ? "text-red-600" : null
-            } text-5xl mt-2 ml-2 block cursor-pointer`}
-          />
-          <p>{props.dlike == null ? 0 : props.dlike}</p>
-        </div>
-      </div>
+      {props.like == null || props.dlike == null ? null : (
+        <Interaction
+          like={props.like}
+          dlike={props.dlike}
+          pid={props.pid}
+          id={props.id}
+          uid={status.logged ? user.userDet.id : null}
+          userDet={status.logged ? user.userDet : null}
+        />
+      )}
       <Header weight="h3" type="Big">
         Comments
       </Header>
